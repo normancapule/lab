@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="174px" height="174px" viewBox="0 0 174 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1 (8751) - http://www.bohemiancoding.com/sketch -->
+    <title>light-symbol</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="light-symbol" sketch:type="MSArtboardGroup">
+            <g id="Group" sketch:type="MSLayerGroup" transform="translate(3.000000, 3.000000)">
+                <path d="M32,55 L32,50 L71,50 L60.5,55 L32,55 Z" id="Rectangle-26" fill="#000000" sketch:type="MSShapeGroup" transform="translate(51.500000, 52.500000) scale(1, -1) translate(-51.500000, -52.500000) "></path>
+                <path d="M138,55 L138,50 L99,50 L109.5,55 L138,55 Z" id="Rectangle-27" fill="#000000" sketch:type="MSShapeGroup" transform="translate(118.500000, 52.500000) scale(1, -1) translate(-118.500000, -52.500000) "></path>
+                <rect id="Rectangle-24" fill="#000000" sketch:type="MSShapeGroup" transform="translate(84.000000, 83.500000) scale(1, -1) translate(-84.000000, -83.500000) " x="31" y="81" width="106" height="5"></rect>
+                <rect id="Rectangle-25" fill="#000000" sketch:type="MSShapeGroup" transform="translate(84.000000, 68.500000) scale(1, -1) translate(-84.000000, -68.500000) " x="31" y="66" width="106" height="5"></rect>
+                <rect id="Rectangle-24" fill="#000000" sketch:type="MSShapeGroup" transform="translate(84.000000, 98.500000) scale(1, -1) translate(-84.000000, -98.500000) " x="31" y="96" width="106" height="5"></rect>
+                <rect id="Rectangle-24" fill="#000000" sketch:type="MSShapeGroup" transform="translate(84.000000, 115.500000) scale(1, -1) translate(-84.000000, -115.500000) " x="31" y="113" width="106" height="5"></rect>
+                <circle id="Oval-42" stroke="#DF3131" stroke-width="4" sketch:type="MSShapeGroup" cx="84" cy="84" r="84"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

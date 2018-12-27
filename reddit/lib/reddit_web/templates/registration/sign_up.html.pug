@@ -1,0 +1,37 @@
+section
+  hr.hr
+  h1.title Sign Up
+  hr.hr
+
+section
+  form
+    .columns
+      .column
+        .field
+          label.label(for="first_name") First Name
+          .control
+            input.input(id="first_name" type="text" placeholder="First Name" required)
+      .column
+        .field
+          label.label(for="last_name") Last Name
+          .control
+            input.input(id="last_name" type="text" placeholder="Last Name" required)
+
+    .field
+      label.label(for="email") Email
+      .control
+        input.input(id="email" type="email" placeholder="Email" required)
+
+    .field
+      label.label(for="password") Password
+      .control
+        input.input(id="password" type="password" placeholder="Password" required)
+
+    .field
+      label.label(for="password_confirmation") Password Confirmation
+      .control
+        input.input(id="password_confirmation" type="password" placeholder="Password Confirmation" required)
+
+    .field
+      .control
+        button.button.is-link(type="submit") Submit

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "postcss-custom-properties": "^8.0.9"
+  }
+}
