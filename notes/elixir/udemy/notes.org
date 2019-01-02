@@ -35,3 +35,12 @@ Enum
 
 Immutability
   -> copy over mutate existing data
+
+Comprehension
+  -> Mapping function
+  -> Transform closed set of data
+
+Tuple
+  -> very fast because it is stored in memory
+  -> modifying is slower since it will create a tuple in memory
+  -> { :ok, value }
