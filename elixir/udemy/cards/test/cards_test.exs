@@ -14,4 +14,8 @@ defmodule CardsTest do
   test "shuffle with non list argument" do
     assert Cards.shuffle(1) == []
   end
+
+  test "contains?" do
+    assert Cards.contains?(Cards.create_deck, "Ace")
+  end
 end

@@ -10,4 +10,8 @@ defmodule Cards do
   def shuffle(deck) when is_list(deck), do: Enum.shuffle(deck)
 
   def shuffle(_), do: []
+
+  def contains?(deck, card) do
+    Enum.member?(deck, card)
+  end
 end
