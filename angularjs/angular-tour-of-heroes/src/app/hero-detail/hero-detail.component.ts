@@ -1,6 +1,8 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Hero } from '../hero';
-import { EventEmitter } from '@angular/core';
+import { HeroService } from '../hero.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-hero-detail',
@@ -8,13 +10,24 @@ import { EventEmitter } from '@angular/core';
   styleUrls: ['./hero-detail.component.scss'],
 })
 export class HeroDetailComponent implements OnInit {
-  @Input() hero: Hero;
-  @Output() cancelEvent = new EventEmitter();
+  constructor(
+    private route: ActivatedRoute,
+    private heroService: HeroService,
+    private location: Location
+  ) {}
 
-  onCancel() {
-    this.cancelEvent.emit();
+  hero: Hero;
+
+  ngOnInit(): void {
+    this.getHero();
   }
-  constructor() {}
 
-  ngOnInit(): void {}
+  getHero(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.heroService.getHero(id).subscribe((hero) => (this.hero = hero));
+  }
+
+  back(): void {
+    this.location.back();
+  }
 }
