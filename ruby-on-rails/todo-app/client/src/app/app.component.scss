@@ -1,0 +1,35 @@
+.navbar {
+  @apply flex items-center justify-between flex-wrap bg-gray-800 p-6;
+  > .brand {
+    @apply flex items-center flex-shrink-0 text-white mr-6;
+  }
+  > .brand > .title {
+    @apply font-semibold text-2xl tracking-tight;
+  }
+  > .links {
+    @apply w-full block flex-grow;
+
+    @screen lg {
+      @apply flex items-center w-auto;
+    }
+  }
+  > .links > .link-item {
+    @apply text-base;
+    @screen lg {
+      @apply flex-grow;
+    }
+  }
+  > .links > .link-item > .link {
+    @apply block mt-4 text-orange-400 mr-4;
+    &:hover {
+      @apply text-white;
+    }
+    @screen lg {
+      @apply inline-block mt-0;
+    }
+  }
+}
+
+.body {
+  @apply p-6;
+}
