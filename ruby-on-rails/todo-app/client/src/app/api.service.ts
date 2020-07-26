@@ -25,7 +25,10 @@ export class ApiService {
   };
 
   login(params: LoginParams): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(`${ENDPOINT}/sessions`, params, this.httpOptions).pipe(
+    const payload = {
+      data: params
+    }
+    return this.http.post<LoginResponse>(`${ENDPOINT}/sessions`, payload, this.httpOptions).pipe(
       tap((response) => console.log(response)),
       catchError((error, caught) => {
         console.log(error);
