@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormGroup, AbstractControl } from '@angular/forms';
+import {
+  FormBuilder,
+  Validators,
+  FormGroup,
+  AbstractControl,
+} from '@angular/forms';
 
-import { ApiService } from '../api.service'
-import { LoginParams } from './login.types'
+import { ApiService } from '../api.service';
+import { LoginParams } from './login.types';
 
 interface UiState {
   submitted: boolean;
@@ -13,20 +18,23 @@ interface UiState {
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   uiState: UiState = {
     submitted: false,
     loading: false,
-    errors: []
+    errors: [],
   };
 
-  constructor(private formBuilder: FormBuilder, private apiService: ApiService) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private apiService: ApiService
+  ) {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email] ],
-      password: ['', [Validators.required]]
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
     });
   }
 
@@ -37,21 +45,22 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.uiState.errors = [];
     if (!this.uiState.submitted) {
       this.uiState.submitted = true;
-      Object.values(this.loginForm.controls).forEach(control => {
+      Object.values(this.loginForm.controls).forEach((control) => {
         control.markAsDirty();
       });
     }
     if (this.loginForm.status === 'VALID') {
       const params: LoginParams = this.loginForm.value;
       this.uiState.loading = true;
-      this.apiService.login(params).subscribe(
-        res => {
-          this.uiState.loading = false
-          console.log('success ', res)
+      this.apiService.login(params).subscribe((res) => {
+        this.uiState.loading = false;
+        if (res.error) {
+          this.uiState.errors = [res.error];
         }
-      );
+      });
     }
   }
 }

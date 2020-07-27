@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo-ng';
+  uiState = {
+    navToggle: true
+  };
+
+  toggleNav() {
+    this.uiState.navToggle = !this.uiState.navToggle
+  }
 }
