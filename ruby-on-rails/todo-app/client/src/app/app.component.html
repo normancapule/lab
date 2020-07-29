@@ -10,7 +10,12 @@
     </button>
   </div>
   <div class="links" [ngClass]="{'-mobile-hide': uiState.navToggle}">
-    <div class="link-item">
+    <div class="link-item" *ngIf="isLoggedIn()">
+      <a (click)="logOut()" class="link">
+        Log Out
+      </a>
+    </div>
+    <div class="link-item" *ngIf="!isLoggedIn()">
       <a routerLink="/login" class="link" routerLinkActive="-active">
         Sign In
       </a>

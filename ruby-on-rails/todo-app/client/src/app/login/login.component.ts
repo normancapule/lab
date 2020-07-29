@@ -7,7 +7,9 @@ import {
 } from '@angular/forms';
 
 import { ApiService } from '../api.service';
-import { LoginParams } from './login.types';
+import { LoginParams } from '../session.types';
+import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 interface UiState {
   submitted: boolean;
@@ -30,6 +32,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private router: Router,
     private apiService: ApiService
   ) {
     this.loginForm = this.formBuilder.group({
@@ -57,9 +60,13 @@ export class LoginComponent implements OnInit {
       this.uiState.loading = true;
       this.apiService.login(params).subscribe((res) => {
         this.uiState.loading = false;
-        if (res.error) {
-          this.uiState.errors = [res.error];
-        }
+        this.router.navigate(['/home'])
+        this.apiService.setSession(res.token)
+      },
+      (onFail: HttpErrorResponse) => {
+        this.uiState.loading = false;
+        this.uiState.errors = [onFail.error.error];
+        console.log(onFail)
       });
     }
   }

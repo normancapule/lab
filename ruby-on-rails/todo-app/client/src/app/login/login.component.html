@@ -31,8 +31,8 @@
     </div>
   </div>
   <div class="buttons">
-    <button class="submit" type="submit">
-      Sign In
+    <button class="submit" type="submit" [disabled]="uiState.loading">
+      {{uiState.loading ? "Submitting..." : "Sign In"}}
     </button>
     <div class="flex">
       <a class="link" href="#">

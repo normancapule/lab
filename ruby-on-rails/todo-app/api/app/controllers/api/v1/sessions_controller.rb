@@ -12,7 +12,7 @@ module Api
       end
 
       def destroy
-        session = Session.find_by(id: params[:id])
+        session = Session.find_by(token: params[:id])
         if session && session.destroy
           render json: {}
         else
