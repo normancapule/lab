@@ -1,0 +1,19 @@
+<form class="form">
+  <div class="form-group">
+    <label>Server Name</label>
+    <input type="text" class="form-control" name="serverName" [(ngModel)]="serverName">
+    <p>{{ serverName }}</p>
+  </div>
+</form>
+
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onClick($event)"
+>
+  Add Server
+</button>
+
+<div *ngFor="let server of servers">
+  <app-server></app-server>
+</div>
