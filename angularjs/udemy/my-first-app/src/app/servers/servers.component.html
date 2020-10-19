@@ -2,7 +2,7 @@
   <div class="form-group">
     <label>Server Name</label>
     <input type="text" class="form-control" name="serverName" [(ngModel)]="serverName">
-    <p>{{ serverName }}</p>
+    <!-- <p>{{ serverName }}</p> -->
   </div>
 </form>
 
@@ -13,6 +13,12 @@
 >
   Add Server
 </button>
+
+<p *ngIf="serverCreated; else noServer">Server was created, server name is {{ serverName }}</p>
+
+<ng-template #noServer>
+  <p>No server was created!</p>
+</ng-template>
 
 <div *ngFor="let server of servers">
   <app-server></app-server>
