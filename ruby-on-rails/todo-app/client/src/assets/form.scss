@@ -1,0 +1,46 @@
+.form {
+  @apply bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4;
+  .form-row {
+    @apply mb-4;
+    &:last-child {
+      @apply mb-0;
+    }
+  }
+  .form-row.-error > .form-control {
+    @apply border-red-500;
+  }
+  .form-row.-error > .error > p {
+    @apply text-red-500 text-xs italic
+  }
+  .form-label {
+    @apply block text-gray-700 text-sm font-bold mb-2;
+  }
+  .form-control {
+    @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight;
+    &:focus {
+      @apply outline-none shadow-outline;
+    }
+  }
+  .buttons {
+    @apply flex items-center justify-between;
+    > .submit {
+      @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+      &:hover {
+        @apply bg-blue-700;
+      }
+      &:focus {
+        @apply outline-none shadow-outline;
+      }
+    }
+    .link {
+      @apply inline-block align-baseline font-bold text-sm text-blue-500;
+      @apply mr-2;
+      &:last-child {
+        margin-right: 0px;
+      }
+      &:hover {
+        @apply text-blue-800;
+      }
+    }
+  }
+}

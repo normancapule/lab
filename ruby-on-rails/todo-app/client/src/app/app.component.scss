@@ -8,9 +8,15 @@
   }
   > .links {
     @apply w-full block self-end self-stretch;
-
     @screen lg {
       @apply flex items-center w-auto;
+    }
+
+    &.-mobile-hide {
+      display: none;
+      @screen lg {
+        display: initial;
+      }
     }
   }
   > .links > .link-item {
@@ -20,7 +26,11 @@
     }
   }
   > .links > .link-item > .link {
-    @apply block text-orange-400;
+    @apply block text-orange-500;
+    cursor: pointer;
+    &.-active {
+      @apply text-orange-100;
+    }
     &:hover {
       @apply text-white;
     }
