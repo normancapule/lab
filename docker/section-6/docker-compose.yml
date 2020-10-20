@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  frontend:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      target: prod
+    ports:
+      - "4200:80"
+    volumes:
+      - ".:/usr/app"
+      - "/usr/app/node_modules"
+    stdin_open: true
+    tty: true
